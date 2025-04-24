@@ -1,7 +1,12 @@
 @font-face {
     font-family: EBGaramond;
-    src: url('public/fonts/EBGaramond.ttf');
+    src: url('fonts/EBGaramond.ttf');
 }
+
+.sticky-top{
+    offset-position: top; !important;
+}
+
 .sidebar-menu {
     position: fixed;
     top: 0; /* Allinealo in alto */
