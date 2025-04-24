@@ -1,0 +1,36 @@
+@font-face {
+    font-family: EBGaramond;
+    src: url('fonts/EBGaramond.ttf');
+}
+.sidebar-menu {
+    position: fixed;
+    top: 0; /* Allinealo in alto */
+    left: -300px; /* Lo posiziona fuori dallo schermo sulla sinistra (cambia con .open) */
+    width: 300px; /* Imposta la larghezza della sidebar */
+    height: 100%; /* Imposta l'altezza al 100% della viewport */
+    background-color: white; /* Imposta il colore di sfondo (puoi cambiarlo) */
+    transition: left 0.3s ease; /* Aggiunge una transizione fluida di 0.3 secondi per la proprietà 'left' */
+    z-index: 1050; /* Assicura che la sidebar sia sopra la maggior parte degli altri contenuti e l'overlay */
+    overflow-y: auto; /* Aggiunge una barra di scorrimento verticale se il contenuto supera l'altezza */
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Aggiunge un'ombra per dare profondità */
+}
+/* Stile per la sidebar menu quando è "aperta" (visibile) */
+.sidebar-menu.open {
+    left: 0; /* Sposta la sidebar sullo schermo, allineandola a sinistra */
+}
+/* Stile per l'overlay (sfondo scuro semi-trasparente) */
+.overlay {
+    position: fixed; /* Posiziona l'overlay in modo fisso rispetto alla viewport */
+    top: 0; /* Allinealo in alto */
+    left: 0; /* Allinealo a sinistra */
+    width: 100%; /* Copre l'intera larghezza della viewport */
+    height: 100%; /* Copre l'intera altezza della viewport */
+    background-color: rgba(0, 0, 0, 0.5); /* Imposta lo sfondo nero con 50% di trasparenza */
+    z-index: 1040; /* Posiziona l'overlay sotto la sidebar ma sopra il contenuto della pagina */
+    display: none; /* Nascosto di default */
+}
+/* Stile per l'overlay quando è "attivo" (visibile, quando la sidebar è aperta) */
+.overlay.active {
+    display: block; /* Lo rende visibile */
+}
+

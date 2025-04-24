@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Il Fatto Quotidiano - Replica</title>
+  </head>
+  <body>
+    <div id="overlay" class="overlay"></div>
+    <div id="sidebarMenu" class="sidebar-menu bg-white">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col">
+            <button
+              id="closeSidebar"
+              class="btn-close float-end mt-3 me-3"
+              aria-label="Close menu"
+            ></button>
+            <div class="p-3">
+              <div class="header-support mb-3">
+                <p class="mb-0 fw-bold">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </p>
+                <p class="mb-1 small text-muted">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </p>
+                <a class="btn btn-sm btn-danger mt-2" href="#">ABBONATI</a>
+              </div>
+              <div class="mb-3">
+                <p class="fw-bold small text-uppercase text-muted">CERCA</p>
+                <div class="input-group">
+                  <label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Cerca..."
+                    />
+                  </label>
+                  <button class="btn btn-outline-secondary" type="button">
+                    🔍
+                  </button>
+                </div>
+              </div>
+              <div class="mb-3">
+                <p class="fw-bold small text-uppercase text-muted">TEMI</p>
+                <div class="d-block gap-2">
+                  <a
+                    class="text-decoration-none badge rounded-pill text-bg-light p-2"
+                    href="#"
+                    >Tema 1</a
+                  >
+                  <a
+                    class="text-decoration-none badge rounded-pill text-bg-light p-2"
+                    href="#"
+                    >Tema 2</a
+                  >
+                  <a
+                    class="text-decoration-none badge rounded-pill text-bg-light p-2"
+                    href="#"
+                    >Tema 3</a
+                  >
+                  <a
+                    class="text-decoration-none badge rounded-pill text-bg-light p-2"
+                    href="#"
+                    >Tema 4</a
+                  >
+                  <a
+                    class="text-decoration-none badge rounded-pill text-bg-light p-2"
+                    href="#"
+                    >Tema 5</a
+                  >
+                </div>
+              </div>
+              <div class="mb-3">
+                <p class="fw-bold small text-uppercase text-muted">Altro</p>
+                <a
+                  class="d-block py-2 text-body-emphasis text-decoration-none border-bottom"
+                  href="#"
+                  >Topic 1</a
+                >
+                <a
+                  class="d-block py-2 text-body-emphasis text-decoration-none border-bottom"
+                  href="#"
+                  >Topic 2</a
+                >
+                <a
+                  class="d-block py-2 text-body-emphasis text-decoration-none border-bottom"
+                  href="#"
+                  >Topic 3</a
+                >
+                <a
+                  class="d-block py-2 text-body-emphasis text-decoration-none border-bottom"
+                  href="#"
+                  >Topic 4</a
+                >
+                <a
+                  class="d-block py-2 text-body-emphasis text-decoration-none border-bottom"
+                  href="#"
+                  >Topic 5</a
+                >
+              </div>
+              <div
+                class="mt-4 pt-3 border-top text-center small text-light bg-dark"
+              >
+                Seguici su: [Icone Social]
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container px-3">
+      <header class="py-3">
+        <div class="row justify-content-between mb-3">
+          <div class="col-auto pt-1 d-flex align-items-center">
+            <a class="link-secondary me-3" href="#" aria-label="Ricerca">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                role="img"
+                viewBox="0 0 24 24"
+              >
+                <title>Search</title>
+                <circle cx="10.5" cy="10.5" r="7.5"></circle>
+                <path d="M21 21l-5.2-5.2"></path>
+              </svg>
+            </a>
+            <a
+              class="link-secondary text-decoration-none d-block hamburger-toggle"
+              href="#"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="currentColor"
+                class="bi bi-list me-1"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 0 0 1H3a.5.5 0 0 0-.5-.5z"
+                />
+              </svg>
+              MENU
+            </a>
+          </div>
+          <div class="col text-center d-block">
+            <nav class="nav justify-content-center flex-wrap">
+              <a class="nav-link link-secondary py-1 px-2" href="#">Topic 1</a>
+              <a class="nav-link link-secondary py-1 px-2" href="#">Topic 2</a>
+              <a class="nav-link link-secondary py-1 px-2" href="#">Topic 3</a>
+              <a class="nav-link link-secondary py-1 px-2" href="#">Topic 4</a>
+              <a class="nav-link link-secondary py-1 px-2" href="#">Topic 5</a>
+              <a class="nav-link link-secondary py-1 px-2" href="#">Topic 6</a>
+            </nav>
+          </div>
+          <div
+            class="col-auto d-flex justify-content-end align-items-center pt-1"
+          >
+            <a class="btn btn-sm btn-danger me-2" href="#">ABBONATIS</a>
+            <a class="link-secondary text-decoration-none" href="#">ACCEDI</a>
+          </div>
+        </div>
+        <div class="row align-items-center py-3 border-top border-bottom">
+          <div class="col-md-3 pt-1">
+            <div class="header-support">
+              <p class="mb-0 fw-bold">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+              <p class="mb-1 small text-muted">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+            </div>
+            <a class="btn btn-sm btn-danger mt-2 header-support" href="#"
+              >ABBONATI</a
+            >
+            <p class="mb-0 mt-2 small text-muted">Direttore: Nome Cognome</p>
+          </div>
+          <div class="col-md-6 pt-1 text-center">
+            <a class="blog-header-logo" href="#">
+              <img
+                src="https://placehold.co/200x102/png?text=LOGO"
+                alt="Logo "
+                class="img-fluid"
+                style="width: 300px; height: auto"
+              />
+            </a>
+          </div>
+          <div class="col-md-3 pt-1 text-end">
+            <p class="mb-0 small text-muted middle-header-date">
+              giorno, gg/mm/aaaa
+            </p>
+            <p class="mb-0 small text-muted">
+              Ultimo aggiornamento: <span id="last-updated">HH:MM</span>
+            </p>
+          </div>
+        </div>
+        <div class="nav-scroller py-1 mb-3 border-bottom d-block">
+          <nav class="nav d-flex justify-content-between flex-wrap">
+            <a
+              class="nav-item nav-link link-body-emphasis active py-1 px-2"
+              href="#"
+              >TEMI</a
+            >
+            <a class="nav-item nav-link link-body-emphasis py-1 px-2" href="#"
+              >Tema 1</a
+            >
+            <a class="nav-item nav-link link-body-emphasis py-1 px-2" href="#"
+              >Tema 2</a
+            >
+            <a class="nav-item nav-link link-body-emphasis py-1 px-2" href="#"
+              >Tema 3</a
+            >
+            <a class="nav-item nav-link link-body-emphasis py-1 px-2" href="#"
+              >Tema 4</a
+            >
+            <a class="nav-item nav-link link-body-emphasis py-1 px-2" href="#"
+              >Tema 5</a
+            >
+            <a class="nav-item nav-link link-body-emphasis py-1 px-2" href="#"
+              >Tema 6</a
+            >
+            <a class="nav-item nav-link link-body-emphasis py-1 px-2" href="#"
+              >Tema 7</a
+            >
+          </nav>
+        </div>
+        <hr class="my-0 d-none" />
+      </header>
+      <main class="container py-4">
+        <h2 class="pb-2 mb-4 fst-italic">Topic</h2>
+        <div class="row g-5">
+          <div class="col-md-8">
+            <article>
+              <p class="small text-muted mb-1">gg/mm/aaaa</p>
+              <h1 class="main-article-title mb-3">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </h1>
+              <div class="row g-4 align-items-start">
+                <div class="col-md-7">
+                  <img
+                    src="https://placehold.co/550x350/png?text=Immagine+Articolo+Principale"
+                    class="img-fluid rounded"
+                    alt="Immagine Articolo Principale"
+                  />
+                </div>
+                <div class="col-md-5">
+                  <p class="lead small">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua.
+                  </p>
+                  <p class="small text-muted mb-1">
+                    <a href="#" class="text-muted text-decoration-none"
+                      >AUTORE</a
+                    >
+                  </p>
+                  <p class="small text-muted mb-1">
+                    <a href="#" class="text-muted text-decoration-none"
+                      >💬 (X)</a
+                    >
+                  </p>
+                  <p class="small fst-italic mt-3 mb-0"></p>
+                  <p class="small mb-1">
+                    <a href="#" class="text-decoration-none link-secondary"
+                      >Leggi l'articolo</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </article>
+            <div class="mt-5 pt-4 border-top">
+              <div class="row row-cols-1 row-cols-md-2 g-4">
+                <div class="col">
+                  <div class="card h-100 border-0">
+                    <div class="card-body">
+                      <p class="text-muted small mb-1">
+                        DATA &nbsp;&nbsp; TEMA
+                      </p>
+                      <h5 class="smaller-article-title mb-2">
+                        TITOLO ARTICOLO IN SECONDO PIANO
+                      </h5>
+                      <img
+                        src="https://placehold.co/180x120/png?text=Immagine+Articolo+2"
+                        class="my-2 img-fluid rounded"
+                        alt="immagine articolo secondario"
+                      />
+                      <p class="mb-0 small text-muted">
+                        <a href="#" class="text-muted text-decoration-none"
+                          >AUTORE</a
+                        >
+                      </p>
+                      <div class="d-flex gap-2 small text-muted mt-1">
+                        <a href="#" class="text-muted text-decoration-none"
+                          ><span>💬(X)</span></a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100 border-0">
+                    <div class="card-body">
+                      <p class="text-muted small mb-1">
+                        DATA &nbsp;&nbsp; TEMA
+                      </p>
+                      <h5 class="smaller-article-title mb-2">
+                        TITOLO ARTICOLO IN SECONDO PIANO
+                      </h5>
+                      <img
+                        src="https://placehold.co/180x120/png?text=Immagine+Articolo+3"
+                        class="my-2 img-fluid rounded"
+                        alt="immagine articolo secondario"
+                      />
+                      <p class="mb-0 small text-muted">
+                        <a href="#" class="text-muted text-decoration-none"
+                          >AUTORE</a
+                        >
+                      </p>
+                      <div class="d-flex gap-2 small text-muted mt-1">
+                        <a href="#" class="text-muted text-decoration-none"
+                          ><span>💬(X)</span></a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr class="my-4" />
+          </div>
+          <div class="col-md-4 border-start">
+            <h5 class="pb-2 mb-3 fst-italic border-bottom">
+              In evidenza Topic
+            </h5>
+            <div class="d-grid gap-4">
+              <div class="card sidebar-article-card border-0">
+                <img
+                  src="https://placehold.co/350x200/png?text=Immagine+Articolo+Sidebar+1"
+                  class="card-img-top rounded"
+                  alt="Immagine articolo sidebar"
+                />
+                <div class="card-body p-0 mt-2">
+                  <p class="small text-muted mb-1">gg/mm/aaaa</p>
+                  <h6 class="smaller-article-title mb-2">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua
+                  </h6>
+                  <p class="mb-0 small text-muted">
+                    <a href="#" class="text-muted text-decoration-none"
+                      >AUTORE</a
+                    >
+                  </p>
+                  <p class="mb-0 small text-muted">
+                    <a href="#" class="text-muted text-decoration-none"
+                      >💬 (X)</a
+                    >
+                  </p>
+                </div>
+              </div>
+              <div class="card sidebar-article-card border-0">
+                <img
+                  src="https://placehold.co/350x200/png?text=Immagine+Articolo+Sidebar+2"
+                  class="card-img-top rounded"
+                  alt="Immagine articolo sidebar"
+                />
+                <div class="card-body p-0 mt-2">
+                  <p class="small text-muted mb-1">gg/mm/aaaa</p>
+                  <h6 class="smaller-article-title mb-2">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua
+                  </h6>
+                  <p class="mb-0 small text-muted">
+                    <a href="#" class="text-muted text-decoration-none"
+                      >AUTORE</a
+                    >
+                  </p>
+                  <p class="mb-0 small text-muted">
+                    <a href="#" class="text-muted text-decoration-none"
+                      >💬(X)</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="py-5 text-center text-light bg-dark mt-5">
+        <div class="container px-3">
+          <p>Footer content goes here.</p>
+          <p class="mb-0">
+            <a href="#" class="text-light">Torna su</a>
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <script src="../src/main.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
