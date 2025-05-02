@@ -4,7 +4,11 @@
 }
 
 .sticky-top{
-    offset-position: top; !important;
+    /* Correzione: offset-position non è una proprietà standard.
+       Se vuoi controllare l'offset, usa 'top' direttamente con position: sticky. */
+    /* offset-position: top; !important; */
+    top: 0; /* Assicurati che sticky-top si attacchi in alto */
+    z-index: 1020; /* Aggiungi uno z-index per essere sicuro che rimanga sopra altri contenuti */
 }
 
 .sidebar-menu {
@@ -33,9 +37,47 @@
     background-color: rgba(0, 0, 0, 0.5); /* Imposta lo sfondo nero con 50% di trasparenza */
     z-index: 1040; /* Posiziona l'overlay sotto la sidebar ma sopra il contenuto della pagina */
     display: none; /* Nascosto di default */
+    /* Aggiunto transizione per un effetto più fluido sull'overlay */
+    transition: background-color 0.3s ease;
 }
 /* Stile per l'overlay quando è "attivo" (visibile, quando la sidebar è aperta) */
 .overlay.active {
     display: block; /* Lo rende visibile */
 }
+/* Aggiunto stile per gestire l'overlay con transizione - parte 1 */
+.overlay {
+    visibility: hidden; /* Nascosto di default */
+    opacity: 0; /* Completamente trasparente */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Transizione opacità e visibilità */
+}
+/* Aggiunto stile per gestire l'overlay con transizione - parte 2 */
+.overlay.active {
+    visibility: visible; /* Reso visibile */
+    opacity: 1; /* Completamente opaco */
+}
+/* Rimosso il display: block; dalla regola overlay.active precedente,
+   perché visibility/opacity con transition funzionano meglio. */
+/* La regola .overlay { display: none; } iniziale può creare conflitti con transition.
+   Usiamo solo visibility/opacity con transition. */
 
+
+/* --- Nuove regole per il logo nell'header mobile --- */
+
+/* Regole per il logo nella versione mobile dell'header */
+.mobile-header-logo {
+    /* Assicurati che il logo si ridimensioni all'interno della colonna */
+    max-width: 100%;
+    height: auto;   /* Mantieni l'aspetto originale */
+}
+
+/* Media Query: Applica una dimensione massima PIÙ PICCOLA SOLO sugli schermi
+   più piccoli di 768px (breakpoint md di Bootstrap) */
+@media (max-width: 767.98px) {
+    .mobile-header-logo {
+        max-width: 100px; /* Larghezza massima più piccola per i telefoni. PROVA A MODIFICARE QUESTO VALORE! */
+        /* Aumenta o diminuisci questo valore finché il layout dell'header mobile non è come lo vuoi.
+           Provare 80px, 90px, 110px, 120px, ecc. */
+    }
+}
+
+/* --- Fine nuove regole per il logo --- */
