@@ -1,41 +1,80 @@
-// Script per gestire la visibilità della sidebar menu e dell'overlay
+// Script per gestire la visibilità della sidebar menu e dell'overlay E l'header che si riduce allo scroll
+
 document.addEventListener('DOMContentLoaded', function() {
-    // Usa querySelectorAll per trovare *tutti* gli elementi con la classe 'hamburger-toggle'
+    // --- INIZIO: Sidebar Menu ---
     const hamburgerToggles = document.querySelectorAll('.hamburger-toggle');
     const sidebarMenu = document.getElementById('sidebarMenu');
     const overlay = document.getElementById('overlay');
     const closeSidebar = document.getElementById('closeSidebar');
-    // Controlla se gli elementi fondamentali (sidebar, overlay, close button) esistono
+
     if (sidebarMenu && overlay && closeSidebar) {
-        // Itera su *tutti* i pulsanti hamburger trovati e aggiungi il listener a ciascuno
         if (hamburgerToggles.length > 0) {
             hamburgerToggles.forEach(function(toggle) {
                 toggle.addEventListener('click', function(e) {
-                    e.preventDefault(); // Impedisce il comportamento predefinito del link
-                    console.log("Click hamburger rilevato su un pulsante."); // Log utile per debugging
-                    sidebarMenu.classList.add('open'); // Aggiunge la classe 'open' per mostrare la sidebar
-                    overlay.classList.add('active'); // Aggiunge la classe 'active' per mostrare l'overlay
+                    e.preventDefault();
+                    sidebarMenu.classList.add('open');
+                    overlay.classList.add('active');
+                    document.body.style.overflow = 'hidden';
                 });
             });
-        } else {
-            console.error("Errore: Nessun elemento con classe '.hamburger-toggle' trovato nel DOM.");
         }
-        // Gestisce il click sul pulsante di chiusura della sidebar
+
         closeSidebar.addEventListener('click', function() {
-            console.log("Click chiusura sidebar rilevato."); // Log utile per debugging
-            sidebarMenu.classList.remove('open'); // Rimuove la classe 'open' per nascondere la sidebar
-            overlay.classList.remove('active'); // Rimuove la classe 'active' per nascondere l'overlay
+            sidebarMenu.classList.remove('open');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
         });
-        // Gestisce il click sull'overlay (area scura esterna) per chiudere la sidebar
+
         overlay.addEventListener('click', function() {
-            console.log("Click overlay rilevato."); // Log utile per debugging
-            sidebarMenu.classList.remove('open'); // Rimuove la classe 'open'
-            overlay.classList.remove('active'); // Rimuove la classe 'active'
+            sidebarMenu.classList.remove('open');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
         });
-    } else {
-        console.error("Errore: Elementi necessari per il menu sidebar non trovati (sidebarMenu, overlay, closeSidebar). Assicurati che gli ID e le classi in HTML e JS siano corretti.");
-        if (!sidebarMenu) console.error("#sidebarMenu non trovato");
-        if (!overlay) console.error("#overlay non trovato");
-        if (!closeSidebar) console.error("#closeSidebar non trovato");
+
+        window.addEventListener('resize', function() {
+            if (window.innerWidth >= 768 && sidebarMenu.classList.contains('open')) {
+                sidebarMenu.classList.remove('open');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
     }
+
+    // --- INIZIO: Data e Ora Live ---
+    function updateLiveDateTime() {
+        const now = new Date();
+        const hours = now.getHours().toString().padStart(2, '0');
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+        const timeString = `${hours}:${minutes}`;
+        const timeElement = document.getElementById('last-updated');
+        if (timeElement) timeElement.textContent = timeString;
+
+        const dayNames = ["domenica", "lunedì", "martedì", "mercoledì", "giovedì", "venerdì", "sabato"];
+        const dateString = `${dayNames[now.getDay()]}, ${now.getDate().toString().padStart(2, '0')}/${(now.getMonth() + 1).toString().padStart(2, '0')}/${now.getFullYear()}`;
+        const dateElement = document.getElementById('current-date');
+        if (dateElement) dateElement.textContent = dateString;
+    }
+
+    updateLiveDateTime();
+    setInterval(updateLiveDateTime, 60000);
+
+    // --- INIZIO: Scroll Header per mostrare logo piccolo solo su desktop ---
+    const middleHeader = document.getElementById('middleHeader');
+    const smallLogo = document.getElementById('small-logo');
+
+    function handleScrollLogo() {
+        if (window.innerWidth >= 992 && middleHeader && smallLogo) {
+            const middleBottom = middleHeader.getBoundingClientRect().bottom;
+            const shouldShowSmallLogo = middleBottom <= 0;
+            smallLogo.classList.toggle('d-none', !shouldShowSmallLogo);
+        } else if (smallLogo) {
+            // Nasconde comunque il logo piccolo su mobile
+            smallLogo.classList.add('d-none');
+        }
+    }
+
+    window.addEventListener('scroll', handleScrollLogo);
+    window.addEventListener('resize', handleScrollLogo);
+    handleScrollLogo();
+
 });

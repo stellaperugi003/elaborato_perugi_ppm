@@ -2,82 +2,126 @@
     font-family: EBGaramond;
     src: url('fonts/EBGaramond.ttf');
 }
-
 .sticky-top{
-    /* Correzione: offset-position non è una proprietà standard.
-       Se vuoi controllare l'offset, usa 'top' direttamente con position: sticky. */
-    /* offset-position: top; !important; */
-    top: 0; /* Assicurati che sticky-top si attacchi in alto */
-    z-index: 1020; /* Aggiungi uno z-index per essere sicuro che rimanga sopra altri contenuti */
+    top: 0;
+    z-index: 1020;
 }
-
 .sidebar-menu {
     position: fixed;
-    top: 0; /* Allinealo in alto */
-    left: -300px; /* Lo posiziona fuori dallo schermo sulla sinistra (cambia con .open) */
-    width: 300px; /* Imposta la larghezza della sidebar */
-    height: 100%; /* Imposta l'altezza al 100% della viewport */
-    background-color: white; /* Imposta il colore di sfondo (puoi cambiarlo) */
-    transition: left 0.3s ease; /* Aggiunge una transizione fluida di 0.3 secondi per la proprietà 'left' */
-    z-index: 1050; /* Assicura che la sidebar sia sopra la maggior parte degli altri contenuti e l'overlay */
-    overflow-y: auto; /* Aggiunge una barra di scorrimento verticale se il contenuto supera l'altezza */
-    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Aggiunge un'ombra per dare profondità */
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    transition: left 0.3s ease;
+    z-index: 1050;
+    overflow-y: auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
-/* Stile per la sidebar menu quando è "aperta" (visibile) */
 .sidebar-menu.open {
-    left: 0; /* Sposta la sidebar sullo schermo, allineandola a sinistra */
+    left: 0;
 }
-/* Stile per l'overlay (sfondo scuro semi-trasparente) */
 .overlay {
-    position: fixed; /* Posiziona l'overlay in modo fisso rispetto alla viewport */
-    top: 0; /* Allinealo in alto */
-    left: 0; /* Allinealo a sinistra */
-    width: 100%; /* Copre l'intera larghezza della viewport */
-    height: 100%; /* Copre l'intera altezza della viewport */
-    background-color: rgba(0, 0, 0, 0.5); /* Imposta lo sfondo nero con 50% di trasparenza */
-    z-index: 1040; /* Posiziona l'overlay sotto la sidebar ma sopra il contenuto della pagina */
-    display: none; /* Nascosto di default */
-    /* Aggiunto transizione per un effetto più fluido sull'overlay */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+    display: none;
     transition: background-color 0.3s ease;
 }
-/* Stile per l'overlay quando è "attivo" (visibile, quando la sidebar è aperta) */
 .overlay.active {
-    display: block; /* Lo rende visibile */
+    display: block;
 }
-/* Aggiunto stile per gestire l'overlay con transizione - parte 1 */
 .overlay {
-    visibility: hidden; /* Nascosto di default */
-    opacity: 0; /* Completamente trasparente */
-    transition: opacity 0.3s ease, visibility 0.3s ease; /* Transizione opacità e visibilità */
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
-/* Aggiunto stile per gestire l'overlay con transizione - parte 2 */
 .overlay.active {
-    visibility: visible; /* Reso visibile */
-    opacity: 1; /* Completamente opaco */
+    visibility: visible;
+    opacity: 1;
 }
-/* Rimosso il display: block; dalla regola overlay.active precedente,
-   perché visibility/opacity con transition funzionano meglio. */
-/* La regola .overlay { display: none; } iniziale può creare conflitti con transition.
-   Usiamo solo visibility/opacity con transition. */
-
-
-/* --- Nuove regole per il logo nell'header mobile --- */
-
-/* Regole per il logo nella versione mobile dell'header */
 .mobile-header-logo {
-    /* Assicurati che il logo si ridimensioni all'interno della colonna */
     max-width: 100%;
-    height: auto;   /* Mantieni l'aspetto originale */
+    height: auto;
 }
-
-/* Media Query: Applica una dimensione massima PIÙ PICCOLA SOLO sugli schermi
-   più piccoli di 768px (breakpoint md di Bootstrap) */
-@media (max-width: 767.98px) {
+@media only screen and (max-width: 600px) {
     .mobile-header-logo {
-        max-width: 100px; /* Larghezza massima più piccola per i telefoni. PROVA A MODIFICARE QUESTO VALORE! */
-        /* Aumenta o diminuisci questo valore finché il layout dell'header mobile non è come lo vuoi.
-           Provare 80px, 90px, 110px, 120px, ecc. */
+        max-width: 100px;
+    }
+    .mobile-only{
+        display: block; !important;
+    }
+
+    .desktop-only{
+        display: none; !important;
+    }
+    .theme-row{
+        overflow: clip;
     }
 }
+@media screen and (min-width: 600px) {
+    .mobile-only{
+        display: none;
+    }
+    .desktop-only{
+        display: block;
+    }
+}
+.theme-row{
+    position : sticky;
+    top: 67px;
+    z-index: 1000
+}
+.blog-section {
+    background-color: #f2f2f2;
+}
 
-/* --- Fine nuove regole per il logo --- */
+.blog-section-title {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.blog-section-toggle {
+    font-size: 0.9em;
+}
+
+.blog-posts-grid {
+}
+.blog-post-excerpt {
+    border-radius: 5px;
+    overflow: hidden;
+}
+.blog-quote-mark {
+    font-size: 3em;
+    color: #000000;
+    line-height: 1;
+    margin-bottom: 10px;
+    font-family: serif;
+}
+.blog-excerpt-text {
+    font-size: 0.9em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+.blog-excerpt-text em {
+    font-style: italic;
+}
+.blog-post-meta {
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+    font-size: 0.8em;
+    color: #555;
+}
+.author-name {
+    color: #333;
+}
+.author-title {
+}
+.blog-section-button {
+    font-size: 1.1em;
+    padding: 10px 20px;
+}
+
